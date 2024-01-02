@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
 
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-    
+    <%= render 'shared/ios_pwa_links' %>
     <%# for Google Lighthouse %>
     <meta name="theme-color" content="#ffffff">
   </head>
