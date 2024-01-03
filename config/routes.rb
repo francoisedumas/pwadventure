@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :quotes
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
+  get "offline", to: "service_worker#offline"
+  get "service_worker.js", to: "service_worker#service_worker"
+
   root "quotes#index"
 end
