@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
   // Is service worker available?
   if (navigator.serviceWorker) {
-    navigator.serviceWorker.register("/service-worker", { scope: "/" })
+    navigator.serviceWorker.register("/service_worker.js", { scope: "/" })
       .then(() => navigator.serviceWorker.ready)
       .then((registration) => {
         if ("SyncManager" in window) {
