@@ -9,7 +9,7 @@ class ServiceWorkerController < ApplicationController
   protect_from_forgery except: :service_worker
 
   def service_worker
-    # byebug
+    # different tests to try to solve MIME issue
     # render partial: '/service_worker', status: 200
     # respond_to do |format|
     #   format.js { render content_type: 'text/javascript', status: 200 }
