@@ -134,13 +134,13 @@
     <div class="terminal">
       <h1>Error <span class="errorcode">NO INTERNET</span></h1>
       <p class="output">Seems like internet is down...</p>
-      <p class="output">Please try to <a href="#1">connect again</a>.</p>
+      <p class="output">Please try to <a href="/">connect again</a>.</p>
       <p class="output">Good luck.</p>
     </div>
     <script>
       // reload when online event is fired
       window.addEventListener("online", () => {
-        window.location.reload(true);
+        window.location.href = '/';
       } );
       setInterval(() => {
         if (navigator.onLine) {
