@@ -61,10 +61,6 @@ export default class extends Controller {
       return;
     }
 
-    console.log("Is installable?")
-    console.log(isInstallable)
-    console.log("Is installed?")
-    console.log(isInstalled)
     if (isInstallable && !isInstalled) {
       if (this.deferredPrompt) {
         this.installPromptTarget.classList.remove("hidden");
