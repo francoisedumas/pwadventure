@@ -4,6 +4,34 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
+  <div data-controller="pwa-installer" class="mb-2">
+    <div data-pwa-installer-target="installPrompt" class="hidden">
+      <div class="flex max-sm:flex-col items-center justify-center bg-blue-500 text-white px-6 py-3.5 rounded">
+        <p class="text-base">Add to your home screen this amazing app on your device?</p>
+        <div class="max-sm:mt-4 sm:ml-6 flex gap-4">
+          <button data-action="click->pwa-installer#onInstall" type="button" class="bg-white text-blue-500 font-semibold py-2 px-4 rounded text-sm hover:bg-slate-100">
+            Install
+          </button>
+          <button data-action="pwa-installer#hidePrompt" type="button" class="bg-white text-blue-500 font-semibold py-2 px-4 rounded text-sm hover:bg-slate-100">
+            Don't Show Again
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div data-pwa-installer-target="manualPrompt" class="hidden">
+      <div class="flex max-sm:flex-col items-center justify-center bg-blue-500 text-white px-6 py-3.5 rounded">
+        <p class="text-base">Follow instructions to install on your device.</p>
+        <div class="max-sm:mt-4 sm:ml-6 flex gap-4">
+          <button data-action="pwa-installer#hidePrompt" type="button" class="bg-white text-blue-500 font-semibold py-2 px-4 rounded text-sm hover:bg-slate-100">
+            Don't Show Again
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Quotes</h1>
     <div class="bg-blue-600 rounded-md h-6 w-20 m-2" data-controller="online-check">Hello</div>
