@@ -16,7 +16,8 @@
     <meta name="theme-color" content="#ffffff">
   </head>
 
-  <body data-controller="companion">
+  <body data-controller="companion"
+        data-companion-vapid-public-key-value="<%= Rails.application.credentials.webpush.public_key.delete('=') %>">
     <main class="container mx-auto mt-28 px-5 flex">
       <%= render "shared/header" %>
       <%= yield %>

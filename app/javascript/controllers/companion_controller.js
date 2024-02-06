@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="companion"
 export default class extends Controller {
+  static values = { vapidPublicKey: String };
+
   connect() {
     window.addEventListener('load', () => {
       // Is service worker available?
@@ -9,11 +11,10 @@ export default class extends Controller {
         navigator.serviceWorker.register("/service_worker.js", { scope: "/" })
           .then(() => navigator.serviceWorker.ready)
           .then((registration) => {
-            if ("SyncManager" in window) {
-              registration.sync.register("sync-forms");
-            } else {
-              window.alert("This browser does not support background sync.")
-            }
+            registration.pushManager.subscribe({
+              userVisibleOnly: true,
+              applicationServerKey: this.vapidPublicKeyValue,
+            }).then(function(sub) { console.log(sub) });
           }).then(() => console.log("[Companion]", "Service worker registered!"));
       }
     });
