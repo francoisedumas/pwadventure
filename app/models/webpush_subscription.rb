@@ -1,0 +1,2 @@
+class WebpushSubscription < ApplicationRecord
+end
