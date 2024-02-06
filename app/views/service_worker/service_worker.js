@@ -68,3 +68,12 @@ setCatchHandler(async ({event}) => {
       return Response.error();
   }
 });
+
+// NOTIFICATION
+
+self.addEventListener('push', (event) => {
+  const title = event.data.text() || "Yay a message";
+  const body = "We have received a push notification "
+
+  self.registration.showNotification(title, { body });
+});
