@@ -102,6 +102,7 @@ GEM
     irb (1.11.0)
       rdoc
       reline (>= 0.3.8)
+    jwt (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -130,6 +131,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
+    openssl (3.2.0)
     pg (1.5.4)
     psych (5.1.2)
       stringio
@@ -208,6 +210,9 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    web-push (3.0.1)
+      jwt (~> 2.0)
+      openssl (~> 3.0)
     websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -237,6 +242,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  web-push
 
 RUBY VERSION
    ruby 3.1.2p20
