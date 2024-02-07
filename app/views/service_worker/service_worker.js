@@ -77,3 +77,19 @@ self.addEventListener('push', (event) => {
 
   self.registration.showNotification(title, { body });
 });
+
+self.addEventListener("pushsubscriptionchange", event => {
+  const newSubscription = event.newSubscription?.toJSON()
+
+  event.waitUntil(
+    fetch("/webpush_subscriptions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        endpoint: event.newSubscription?.endpoint,
+        p256dh: newSubscription?.keys?.p256dh,
+        auth: newSubscription?.keys?.auth
+      })
+    })
+  )
+})
