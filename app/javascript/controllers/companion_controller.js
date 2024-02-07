@@ -10,11 +10,11 @@ export default class extends Controller {
       if (navigator.serviceWorker) {
         navigator.serviceWorker
           .register("/service_worker.js", { scope: "/" })
-          .then(() => navigator.serviceWorker.ready)
           .then(() => {
             // Request permission for notifications
             Notification.requestPermission();
           })
+          .then(() => navigator.serviceWorker.ready)
           .then((registration) => {
             registration.pushManager
               .subscribe({
